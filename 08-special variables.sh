@@ -1,6 +1,6 @@
 #!/bin/bash
 
-all variables passed to script: $*
+all variables passed to script: $@
 number of variable spassed: $#
 script name: $0
 present working directory: $PWD
