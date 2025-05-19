@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
     echo "ERROR: please run the script with root access"
     exit 1 #other than 0 upto 127#
@@ -11,3 +11,11 @@ else
 fi
 
 dnf install mysql -y
+
+if [ $? -eq 0 ]
+then
+    echo "installing MYSQL is .... Success"
+else
+    echo "Installing MYSQL is .... Failure"
+    exit 1
+fi
