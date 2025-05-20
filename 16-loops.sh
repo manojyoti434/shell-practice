@@ -42,10 +42,10 @@ for PACKAGE in $@
     do
         dnf list installed $PACKAGE &>>LOG_FILE
         if [ $? -ne 0 ]
-    then
-        echo "$package is not installed... going to install it" | tee -a $LOG_FILE
-        dnf install $package -y &>>$LOG_FILE
-        VALIDATE $? "$package"
+        then
+            echo "$package is not installed... going to install it" | tee -a $LOG_FILE
+            dnf install $package -y &>>$LOG_FILE
+            VALIDATE $? "$package"
     else
         echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
     fi
